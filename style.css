@@ -1,0 +1,320 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height:100vh;
+    margin: 0;
+    padding: 0;
+    background: #333;
+    font-family: 'Poppins';
+
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Navigation */
+
+header{
+
+    width: 100%;
+    height: 100px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #f1f1f1;
+    text-align: center;
+    padding: 5px 0;
+    
+}
+
+h1{
+    font-size:40px;
+    color: #f1f1f1;
+    text-align: center;
+}
+.grid{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-auto-rows: 200px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    justify-content: center;
+    gap:10px;
+}
+.box {
+    height: 100%;
+    width: 100%;
+    background: #f1f1f1f1;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+ }
+
+ /* Animation 1 overlay*/
+
+.box1{
+    overflow: hidden;
+    position: relative;
+}
+
+.box1 img{
+
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-out;
+}
+
+.overlay{
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+}
+.text {
+    background-color:#333;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s 0.1s ease-out;
+}
+.box1:hover img{
+    opacity:0.3;
+}
+
+.box1:hover .text {
+    opacity: 1;
+}
+
+/* Animation 2 : décollage*/
+
+.box2{
+    background:#333;
+    position: relative;
+    border: 2px dashed transparent;
+    transition : border 0.5s  ease-out;
+}
+.box2 .contenu {
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    background:#f1f1f1;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 0 5px 0 transparent;
+
+}
+.box2 .contenu .txt {
+    margin: 40% 15%;
+    background-color: #333;
+    color : #f1f1f1;
+}
+.box2 .contenu:hover {
+    transform: translate(-10px, -15px);
+    box-shadow: 10px 10px 10px 5px #1f1f1f;
+}
+.box2:hover{
+    border: 2px dashed #f1f1f1;
+}
+
+
+/* Animation 3 : rotation*/
+
+.box3{
+    cursor: pointer;
+    border: 1px solid #1f1f1f;
+    display: block;
+}
+
+.box3 .headPhoto {
+    height: 4 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #1f1f1f;
+}
+.box3 .cercle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s background-color linear;
+}
+.box3 .headPhoto .cercle svg {
+    width: 80px;
+    fill: #f1f1f1f1;
+}
+.box3 h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    transition: 0.4s linear color;
+}
+
+.box3:hover {
+    background: #333;
+}
+.box3:hover .cercle {
+    background: #f1f1f1;
+}
+.box3:hover .cercle svg {
+    transition: 0.3s all linear;
+    fill: #333;
+    transform: rotateY(360deg);
+}
+
+.box3:hover h2 {
+    color: #f1f1f1;
+}
+
+/* Animation 4 : flou*/
+
+.box4 {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    align-content: center;
+    
+}
+
+.minibox{
+    width: 55px;
+    height: 55px;
+    background-color:#3f3f3f;
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #f1f1f1;
+}
+.flou {
+    filter: blur(3px);
+    opacity: 0.5;
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
+/* Animation 5 : glow*/
+
+
+.box5 .txt {
+    font-family:  'Abril Fatface', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+}
+.anim {
+    animation: glow 1s ease-in-out infinite;
+}
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 50px aqua;
+    }
+    25% {
+        text-shadow: 0px 0px 50px chartreuse;
+    }
+    50% {
+        text-shadow: 0px 0px 50px brown;
+    }
+    100% {
+        text-shadow: 0px 0px 50px midnightblue;
+    }
+}
+
+
+/* Animation 6*/
+
+.box6{
+    background-color: #333;
+    box-shadow: 0 100px 80px -80px #f1f1f1 inset;
+    transition: background-color 1s ease, box-shadow 1s ease;
+    position: relative;
+}
+.box6:hover{
+    background-color: #f1f1f1;
+    box-shadow: 0 130px 80px -80px #333 inset;
+   
+}
+
+.box6 h2{
+    font-size: 15px;
+    text-align: center;
+    margin: 30px 10px 10px 10px;
+    position: relative;
+}
+.box6 h2::before{
+    content: "“";
+    font-size: 25px;
+    position: absolute;
+    top:-20px;
+    left: 5px;
+}
+.box6 h2::after{
+    content: "”";
+    font-size: 25px;
+    position: absolute;
+    top:-20px;
+    right: 5px;
+}
+
+.box6 span{
+    
+    font-size: 10px;
+    position: absolute;
+    bottom :20px;
+    right: 5px;
+
+}
+
+/* Animation 7 curseur personnalisé */
+
+.box7 {
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+}
+
+.cursor {
+    width: 40px;
+    height: 40px;
+    border-radius: 52% 48% 71% 29% / 48% 38% 62% 52%;
+    border: 2px solid #fff;
+    display: none;
+    position: absolute;
+    z-index: 1000px;
+    animation: borderAnim 4s ease-in-out infinite alternate;
+    pointer-events: none;
+
+}
+
+@keyframes borderAnim {
+    from {
+        border-radius: 52% 48% 71% 29% / 48% 38% 62% 52%  ;
+    }
+    to {
+        border-radius: 27% 73% 22% 78% / 59% 53% 47% 41% ;
+    }
+}
+
+
+
+
+
+
+  
