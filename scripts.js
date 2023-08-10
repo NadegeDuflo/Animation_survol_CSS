@@ -98,30 +98,43 @@ btn6.addEventListener('mouseleave', () => {
 
 
 
-// Animation 5 : gloss
+// Animation 5 : gloss et cursor
 
 const text = document.querySelector('.box5 .txt');
+const cursor = document.querySelector('.cursor');
+const box5 = document.querySelector('.box5');
+const cursorBefore = document.querySelector('.cursor::before');
+
 
 text.addEventListener('mouseenter', () => {
     text.classList.add('anim');
+    
+
 })
 text.addEventListener('mouseleave', () => {
     text.classList.remove('anim');
+    
+
 })
 
-// Animation 7 cursor
+//Animation cursor
 
-const cursor = document.querySelector('.cursor');
-const box7 = document.querySelector('.box7');
-
-box7.addEventListener('mousemove', e => {
-    cursor.style.top = `${e.pageY - box7.offsetTop -20}px`
-    cursor.style.left = `${e.pageX - box7.offsetLeft-20}px`
+box5.addEventListener('mousemove', e => {
+    cursor.style.top = `${e.pageY - box5.offsetTop -20}px`
+    cursor.style.left = `${e.pageX - box5.offsetLeft-20}px`
     cursor.style.display = "block"
     
 });
 
-box7.addEventListener('mouseout', () => {
+box5.addEventListener('mouseout', () => {
     cursor.style.display = "none"
 });
+
+box5.addEventListener('click', ()=>{
+    cursor.classList.add('expand');
+
+    setTimeout(()=>{
+        cursor.classList.remove("expand");
+    }, 500);
+})
 
